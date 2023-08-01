@@ -10,10 +10,33 @@ function App() {
   const [Email,setEmail]=useState("")
   const [Password,setPassword]=useState("")
 
+  // function handleSubmit(e){
+  //   e.preventDefault()
+  //   // const form = e.target
+  //   const formData = new FormData();
+
+  //   formData.append("FirstName",FirstName);
+  //   formData.append("LastName",LastName);
+  //   formData.append("Email",Email);
+  //   formData.append("Password",Password);
+
+  //   const inputObject = Object.fromEntries(formData);
+
+  //   console.log(JSON.stringify(inputObject));
+
+  //   // console.log({FirstName,LastName,Email,Password})
+  // }
+
   function handleSubmit(e){
     e.preventDefault()
+    // const form = e.target
+    // console.log(Object.fromEntries(form))
+    // data = new FormData(form)
+    // console.log(data)
     console.log({FirstName,LastName,Email,Password})
   }
+
+
 
 
   function handleFirstNameChange(e){
@@ -37,7 +60,8 @@ function App() {
 
   return (
     <div className="App">
-    <form onSubmit={handleSubmit}>
+      
+    <form method='POST' onSubmit={handleSubmit}>
       <label>
       FirstName:
       <input onChange={handleFirstNameChange} value={FirstName}  type='text'/>
